@@ -1,10 +1,10 @@
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/grass.png">
-    <title>Really Grass Cutting Incremental</title>
+    <title>Russian RGCI</title>
 
     <script src="js/break_eternity.js"></script>
     <script src="js/elements.js"></script>
@@ -84,20 +84,20 @@
                             <div id="level_bar">
     
                             </div><div id="level_info">
-                                Level <b id="level_amt" class="cyan">0</b><br>
+                                Уровень <b id="level_amt" class="cyan">0</b><br>
                                 <span id="level_progress" style="font-size: 18px;">0 / 0</span><br>
                                 <span id="level_cut" style="font-size: 18px;"></span>
                             </div>
                         </div><div id="tier_div">
                             <div id="tier_bar"></div><div id="tier_info">
-                                Tier <b id="tier_amt" class="yellow">0</b><br>
+                                Тир <b id="tier_amt" class="yellow">0</b><br>
                                 <span id="tier_progress" style="font-size: 18px;">0 / 0</span><br>
                                 <span id="tier_cut" style="font-size: 18px;"></span><br>
                                 <span id="tier_mult" style="font-size: 18px;"></span>
                             </div>
                         </div><div id="astral_div">
                             <div id="astral_bar"></div><div id="astral_info">
-                                Astral <b id="astral_amt" class="magenta">0</b><br>
+                                Астрал <b id="astral_amt" class="magenta">0</b><br>
                                 <span id="astral_progress" style="font-size: 18px;">0 / 0</span><br>
                                 <span id="astral_cut" style="font-size: 18px;"></span>
                             </div>
@@ -110,24 +110,24 @@
                     </div>
                 </div>
             </div><div id="map_div_opt">
-                <button onclick="if (confirm('Are you sure you want to wipe your save?')) {wipe(true)}">Hard Reset</button>
-                <button onclick="save()">Save</button>
-                <button onclick="importy()">Import</button>
-                <button onclick="export_copy()">Export to clipboard</button>
-                <button onclick="exporty()">Export</button>
-                <button onclick="window.open('https://discord.gg/Ekp8FsSwzR')">Join Discord Server</button><br>
-                <button onclick="hideUpgOption()">Hide upgrades which is maxed/purchased: <span id="hideUpgOption">OFF</span></button>
-                <button onclick="player.offline.enabled = !player.offline.enabled">Offline Progress: <span id="offlineOption">OFF</span></button>
-                <button onclick="changeGHMult()" id="multGHButton">Multi-Grasshop: <span id="multGHOption">OFF</span></button>
-                <button onclick="changeGSMult()" id="multGSButton">Multi-Grass-skip: <span id="multGSOption">OFF</span></button>
+                <button onclick="if (confirm('Вы уверены, что хотите сбросить сохранение')) {wipe(true)}">Полный сброс</button>
+                <button onclick="save()">Сохранить</button>
+                <button onclick="importy()">Импорт</button>
+                <button onclick="export_copy()">Экспорт в буфер</button>
+                <button onclick="exporty()">Экспорт</button>
+                <button onclick="window.open('https://discord.gg/Ekp8FsSwzR')">Вступить в Дискорд сервер</button><br>
+                <button onclick="hideUpgOption()">Спрятать купленные/максимальные улучшения: <span id="hideUpgOption">ВЫКЛ</span></button>
+                <button onclick="player.offline.enabled = !player.offline.enabled">Офлайн прогресс: <span id="offlineOption">ВЫКЛ</span></button>
+                <button onclick="changeGHMult()" id="multGHButton">Мульти-Травохоп: <span id="multGHOption">ВЫКЛ</span></button>
+                <button onclick="changeGSMult()" id="multGSButton">Мульти-Травоскип: <span id="multGSOption">ВЫКЛ</span></button>
                 <br><br>
                 Really Grass Cutting Incremental - v0.5.3 - Made by MrRedShark77<br>
                 The game inspired by <a href="https://www.roblox.com/games/9292879820">Grass Cutting Incremental</a><br>
                 Artist(-s): Bézier<br>
                 <b class="red">Warning! Recommended size is 1920x1080! You may change zoom!</b><br><br>
                 <details>
-                    <summary>Endgame (Spoiler)</summary>
-                    Level 1e245+; Supernova Tier 16; Eclipse: 4 Qt+; Stage 2,200,000+; HSJ 16;
+                    <summary>Концовка (СПОЙЛЕР)</summary>
+                    Уровень 1e245+; Тип Суперновы 16; Затмение: 4 Qt+; Битва 2,200,000+; ХСП 16;
                 </details>
             </div><div id="map_div_p">
                 <div style="width: 100%; height: 50%;">
@@ -181,9 +181,9 @@
                 </div>
             </div><div id="map_div_chal" style="overflow-y: auto;">
                 <div id="chal_unl">
-                    Crystallize once to Unlock
+                    Для открытия, совершите Кристаллизацию
                 </div><div id="chal_div">
-                    Click any challenge to start! Click again to exit.<br>
+                    Нажми на любой вызов для старта! Нажми вновь для выхода.<br>
                     <div id="chal_table" class="table_center"></div>
                 </div>
             </div><div id="map_div_gh">
@@ -237,15 +237,15 @@
                     <div style="width: 50%; height: 100%;"><div class="upgs_div" id="upgs_div_assembler"></div></div>
                 </div><div style="width: 100%; height: 50%;" class="table_center">
                     <div style="width: 400px; height: 100%;"><div class="upgs_div rocket" id="refinery_div">
-                        <h3>Refinery</h3><br>
-                        Next Rocket Fuel:<br><br>
+                        <h3>Переработка</h3><br>
+                        След. Ракетное Топливо:<br><br>
                         <div style="font-size: 16px;">
-                            <b class="yellow">Charge</b><br>
+                            <b class="yellow">Заряд</b><br>
                             <span id="rf_cost0">0 / 0</span><br><br>
-                            <b class="black">Oil</b><br>
+                            <b class="black">Нефть</b><br>
                             <span id="rf_cost1">0 / 0</span>
                         </div><div style="position: absolute; bottom: 5px; width: 100%;">
-                            <button id="rf_craft_bulk" onclick="ROCKET.create()">Craft to ??? Rocket Fuel</button>
+                            <button id="rf_craft_bulk" onclick="ROCKET.create()">Сделать до ??? Ракетного Топлива</button>
                         </div>
                     </div></div>
                     <div style="width: calc(100% - 400px); height: 100%;"><div class="upgs_div" id="upgs_div_rocket"></div></div>
@@ -256,12 +256,12 @@
                         <div class="reset_div" id="reset_div_rocket_part"></div>
 
                         <div class="upgs_div star" id="star_div">
-                            <h3>The Star</h3><br>
+                            <h3>Звезда</h3><br>
                             - Tier <b class="cyan" id="star_tier">0</b> Star -
                             <div style="font-size: 16px;">
-                                (next tier at <span id="starnexttier">???</span>)<br><br>
-                                Your Star Growth is <b class="cyan" id="stargrowth">???</b><br>
-                                Grow Speed: <b id="growspeed">???</b>
+                                (след. тип в <span id="starnexttier">???</span>)<br><br>
+                                Текущий прогресс Роста Звезды - <b class="cyan" id="stargrowth">???</b><br>
+                                Скорость Роста: <b id="growspeed">???</b>
                             </div>
                         </div>
                     </div>
@@ -286,21 +286,21 @@
                     <div id="sc_desc_div">
                         <div id="sc_title"></div>
                         <div id="sc_desc"></div><br>
-                        <button onclick="tmp.sc_choosed = [null,null]">Cancel</button>
-                        <button onclick="buySCUpgrade(tmp.sc_choosed[0],tmp.sc_choosed[1])">Buy 1</button>
-                        <button onclick="buyNextSCUpgrade(tmp.sc_choosed[0],tmp.sc_choosed[1])">Buy Next</button>
-                        <button onclick="buyMaxSCUpgrade(tmp.sc_choosed[0],tmp.sc_choosed[1])">Buy Max</button>
+                        <button onclick="tmp.sc_choosed = [null,null]">Отмена</button>
+                        <button onclick="buySCUpgrade(tmp.sc_choosed[0],tmp.sc_choosed[1])">Купить 1</button>
+                        <button onclick="buyNextSCUpgrade(tmp.sc_choosed[0],tmp.sc_choosed[1])">Купить до следующего</button>
+                        <button onclick="buyMaxSCUpgrade(tmp.sc_choosed[0],tmp.sc_choosed[1])">Купить максимум</button>
                     </div><div>
-                        <button onclick="tmp.sc_tab = 'auto'">Automation Tree</button>
-                        <button onclick="tmp.sc_tab = 'speed'">Speed Tree</button>
-                        <button onclick="tmp.sc_tab = 'progress'">Progession Tree</button>
+                        <button onclick="tmp.sc_tab = 'auto'">Древо Автоматизации</button>
+                        <button onclick="tmp.sc_tab = 'speed'">Древо Скорость</button>
+                        <button onclick="tmp.sc_tab = 'progress'">Древо Прогресса</button>
                         <span id="planetoidUnl">
-                            <button onclick="tmp.sc_tab = 'ring'">Ring Tree</button>
-                            <button onclick="tmp.sc_tab = 'reserv'">Reservatorium Tree</button>
+                            <button onclick="tmp.sc_tab = 'ring'">Древо Кольца</button>
+                            <button onclick="tmp.sc_tab = 'reserv'">Древо Резервиториума</button>
                         </span>
                     </div>
                 </div><div style="position: absolute; right: 15px; top: 5px;">
-                    <button id="buy_all_sc" onclick="buyMaxSCs()">Buy All</button>
+                    <button id="buy_all_sc" onclick="buyMaxSCs()">Купить все</button>
                     <div id="starAmt" style="display: inline-block;"></div>
                 </div><canvas id="star_chart_canvas">
 
@@ -308,7 +308,7 @@
             </div><div id="map_div_at">
                 <div style="width: 100%; height: 50%;" class="table_center">
                     <div style="width: 50%; height: 100%; overflow-y: auto; font-size: 18px;">
-                        <h3>Astral <span class="magenta" id="astral2">0</span></h3>
+                        <h3>Астрал <span class="magenta" id="astral2">0</span></h3>
                         <div id="astral_eff"></div>
                     </div>
                     <div style="width: 50%; height: 100%;"><div class="milestone_div" id="milestone_div_agh"></div></div>
@@ -327,19 +327,19 @@
                     <div style="width: 33.3%; height: 100%;"><div class="reset_div" id="reset_div_astralPrestige"></div></div>
                     <div style="width: 33.4%; height: 100%;"><div id="lunar_obelisk_div">
                         <div style="height: 80px;">
-                            Lunar Power: <b id="lp_gain">???/s</b><br>
-                            Active: <span id="lp_active">0 / 0</span>
+                            Энергия Луны: <b id="lp_gain">???/s</b><br>
+                            Активно: <span id="lp_active">0 / 0</span>
                         </div><div id="lop_table">
                             
                         </div><div>
-                            <i style="font-size: 14px; color: lightcoral">After level 200 of any lunar obelisk that includes only exponential boost, its effect will be softcapped!</i>
+                            <i style="font-size: 14px; color: lightcoral">После уровня 200 любого лунного обелиска, что дает только экспонентное усиление, его эффект уходит в софткап!</i>
                         </div>
                     </div></div>
                     <div style="width: 33.3%; height: 100%;"><div id="void_obelisk_div">
                         <div id="void_table">
                             
                         </div><div>
-                            <i style="font-size: 14px; color: lightcoral">Centralizing currency makes its multiplier equals to grass/planetarium/solar shards/solar flares, except grass types (results that grass/planetarium is squared).</i>
+                            <i style="font-size: 14px; color: lightcoral">Централизация валюты делает множитель равным к Траве/Планетриуму/Солнечных осколков/Солнечных огней, кроме типов травы (квадратизация (^2) валюты).</i>
                         </div>
                     </div></div>
                 </div>
@@ -347,22 +347,22 @@
                 <div style="width: 100%; height: 100%; display: none;" class="table_center" id="cs_div">
                     <div style="width: calc(50% - 4px); height: calc(100% - 4px); background-color: #2d006166; border: solid 2px white;">
                         <div style="width: 100%; height: 55px; background-color: #0006;" id="constellation_amt">
-                            0 Lines
+                            0 линий
                         </div><div style="width: 100%; height: calc(100% - 175px); overflow: scroll;" id="constellation_grid">
                             
                         </div><div class="table_center" style="width: 100%; height: 80px; background-color: #0006;">
-                            <div style="width: 50%; font-size: 16px;" id="constellation_stab">Instability: 0 / 0</div><div style="width: 50%;" id="constellation_select"></div>
+                            <div style="width: 50%; font-size: 16px;" id="constellation_stab">Нестабильность: 0 / 0</div><div style="width: 50%;" id="constellation_select"></div>
                         </div><div style="height: 40px; background-color: #0006;">
-                            <button onclick="cs_sellMode = !cs_sellMode" style="font-size: 16px;" id="cs_sell">Delete Mode: OFF</button>
-                            <button onclick="sellAllGrids()" style="font-size: 16px;">Sell All</button>
+                            <button onclick="cs_sellMode = !cs_sellMode" style="font-size: 16px;" id="cs_sell">Удаление: ВКЛ</button>
+                            <button onclick="sellAllGrids()" style="font-size: 16px;">Продать все</button>
                         </div>
                     </div><div style="width: 50%; height: 100%;">
                         <div style="width: calc(100% - 4px); height: calc(60% - 4px); background-color: #2d006166; border: solid 2px white;">
                             <div style="width: 100%; height: 40px; background-color: #0006;">
-                                <button onclick="cs_tab = 0" style="font-size: 16px;">Buildings</button>
-                                <button onclick="cs_tab = 1" style="font-size: 16px;">Bonuses</button>
-                                <button onclick="cs_tab = 2" style="font-size: 16px;">Presets</button>
-                                <button onclick="cs_tab = 3" id="dc_tab" style="font-size: 16px;">Dark Charger</button>
+                                <button onclick="cs_tab = 0" style="font-size: 16px;">Строения</button>
+                                <button onclick="cs_tab = 1" style="font-size: 16px;">Бонусы</button>
+                                <button onclick="cs_tab = 2" style="font-size: 16px;">Заготовки</button>
+                                <button onclick="cs_tab = 3" id="dc_tab" style="font-size: 16px;">Темный зарядка</button>
                             </div><div style="width: 100%; height: calc(100% - 40px); font-size: 16px;">
                                 <div id="cs_tab0">
                                     <div id="cs_btn_table"></div>
@@ -394,10 +394,10 @@
                         <div id="su_desc_div">
                             <div id="su_title"></div>
                             <div id="su_desc"></div><br>
-                            <button onclick="solar_upg = [null,null]">Cancel</button>
-                            <button onclick="buySolarUpgrade(solar_upg[0],solar_upg[1])">Buy 1</button>
-                            <button onclick="buyNextSolarUpgrade(solar_upg[0],solar_upg[1])">Buy Next</button>
-                            <button onclick="buyMaxSolarUpgrade(solar_upg[0],solar_upg[1])">Buy Max</button>
+                            <button onclick="solar_upg = [null,null]">Отмена</button>
+                            <button onclick="buySolarUpgrade(solar_upg[0],solar_upg[1])">Купить 1</button>
+                            <button onclick="buyNextSolarUpgrade(solar_upg[0],solar_upg[1])">Купить до следующего</button>
+                            <button onclick="buyMaxSolarUpgrade(solar_upg[0],solar_upg[1])">Купить все</button>
                         </div>
                     </div>
                 </div>
@@ -405,7 +405,7 @@
                 <div style="width: 100%; height: 50%;" class="solar-upgs-bg">
                     <div id="sn_tier_div">
                         <div>
-                            <h3>Supernova Tier</h3><br>
+                            <h3>Тир Суперновы</h3><br>
                             <div id="sn_tier"><div>1</div></div>
                         </div>
                     </div><div id="sn_milestones"></div>
@@ -419,10 +419,10 @@
                 <div class="solarian-div table_center">
                     <div style="width: 50%; height: 100%; position: relative;">
                         <div id="solarian_stage">
-                            <h2>Stage 1</h2>
+                            <h2>Битва 1</h2>
                         </div>
                         <div id="stage_enemy">
-                            <h2>Enemy</h2>
+                            <h2>Враг</h2>
                             <div class="progress-bar" id="enemy_bar"><div></div></div>
                             <div class="table_center">
                                 <div class="stage-stat"><img src="images/Curr/Soul.png"><div id="enemy_soul">???</div></div>
@@ -435,53 +435,53 @@
                             <div class="progress-bar" id="attack_bar"><div></div></div>
                         </div>
                     </div><div style="width: 50%; height: 100%;">
-                        <h2>Stage Bonuses</h2>
+                        <h2>Бонусы Битвы</h2>
                         <div id="stage_bonus"></div>
                     </div>
                 </div>
             </div><div id="map_div_sol">
                 <div style="width: 100%; height: 100%;" class="table_center">
                     <div style="width: 33%; height: 100%;"><div class="solarian-div">
-                        <div style="height: 50px;"><h2>Materials/Collecting</h2></div>
+                        <div style="height: 50px;"><h2>Материалы/Сбор</h2></div>
                         <div class="solarian-list forming" id="materials_table">
                             <div class="material-div">
                                 <img src="images/Curr/SolCurrency1.png">
-                                <div class="material-name">Sol</div>
+                                <div class="material-name">Сол</div>
                                 <div class="material-amount"><b>123,456</b><br><span>(+123)</span></div>
                                 <div class="progress-bar"><div>???</div></div>
                             </div>
                         </div>
                         <div id="collecting_tab_table">
-                            <button onclick="collect_tab=0" style="background-color: gold;">Solarian</button>
-                            <button id="collect_tab_btn1" onclick="collect_tab=1" style="background-color: lightblue;">Lunarian</button>
+                            <button onclick="collect_tab=0" style="background-color: gold;">Солнцелюды</button>
+                            <button id="collect_tab_btn1" onclick="collect_tab=1" style="background-color: lightblue;">Луналюды</button>
                         </div>
                     </div></div><div style="width: 67%; height: 100%;"><div class="solarian-div">
-                        <div style="height: 50px;"><h2>Forming</h2></div>
+                        <div style="height: 50px;"><h2>Формирования</h2></div>
                         <div class="solarian-list forming" id="forming_table">
                             <div class="forming-div">
-                                <div class="forming-title">Test</div>
+                                <div class="forming-title">Тест</div>
                                 <img src="images/Icons/Sword.png">
                                 <div class="forming-boost">
-                                    <div>Level 0 : ???</div>
-                                    <div>Rank 0 : ???</div>
+                                    <div>Уровень 0 : ???</div>
+                                    <div>Ранг 0 : ???</div>
                                 </div>
-                                <button>Start</button>
+                                <button>Начать</button>
                                 <div class="progress-bar f-level"><div>???</div></div>
                                 <div class="progress-bar f-rank"><div>???</div></div>
                                 <div class="forming-res"></div>
                             </div>
                         </div>
                         <div id="forming_tab_table">
-                            <button>Stats</button>
+                            <button>Характеристики:</button>
                         </div>
                     </div></div>
                 </div>
             </div><div id="map_div_solc">
                 <div class="solarian-div">
-                    <div style="height: 50px;"><h2>Sol Compression</h2></div>
+                    <div style="height: 50px;"><h2>Сжатие Сола</h2></div>
                     <div class="solarian-list forming table_center" id="solc_table">
                         <div class="compression-div">
-                            <h3>[Tier 1]</h3> <span class="smallAmt">(x1)</span>
+                            <h3>[Тир 1]</h3> <span class="smallAmt">(x1)</span>
                             <div>1.23e123,456,789 | 1.23e123,456,789 <span class="smallAmt">(+1.23e123,456,789/s)</span></div>
                             <div>???</div>
                         </div>
@@ -490,19 +490,19 @@
                 </div>
             </div><div id="map_div_adv">
                 <div class="solarian-div">
-                    <div style="height: 50px;"><h2>Advanced Star</h2></div>
+                    <div style="height: 50px;"><h2>Продвинутая Звезда</h2></div>
                     <div class="solarian-list forming table_left" id="adv_star_table">
                         <div class="star-milestone">
                             <div class="sm-tier">6</div>
-                            <div class="sm-bonus">x??? to something</div>
+                            <div class="sm-bonus">x??? к чему-то</div>
                             <div class="sm-req">
-                                ??? Star Growth<br>
-                                ??? Eclipse<br>
-                                ??? Mana<br>
+                                ??? Роста Звезды<br>
+                                ??? Затмения<br>
+                                ??? Мана<br>
                             </div>
                         </div>
                     </div>
-                    <button id="star_btn" onclick="increaseStar()">Increase The Star</button>
+                    <button id="star_btn" onclick="increaseStar()">Улучшить Звезду</button>
                 </div>
             </div><div id="map_div_lun_map">
                 <div class="solarian-div table_center">
@@ -542,15 +542,15 @@
                                         <div class="ss-boost" id="ss_boost">???</div>
                                     </div>
                                     <div class="ss-level">0</div>
-                                    <button class="ss-btn">Begin</button>
+                                    <button class="ss-btn">Начать</button>
                                 </div>
                             </div>
                         </div><div id="synthesis_types" style="width: calc(25% - 20px); height: calc(100% - 20px); margin: 10px; background-color: #181818; overflow-y: auto; overflow-x: hidden;">
                             <div class="synthesis-insert">
                                 <img class="ss-icon" src="images/Curr/CorruptionShard.png">
                                 <div class="si-desc">
-                                    Corruption Shard<br>
-                                    [FREE]
+                                    Осколок Порчи<br>
+                                    [Халява]
                                 </div>
                             </div>
                         </div>
@@ -569,20 +569,20 @@
             <button id="rMap" onclick="switchMap(1,0)" class="locked">▶</button>
             <button id="uMap" onclick="switchMap(0,-1)" class="locked">▲</button>
             <button id="dMap" onclick="switchMap(0,1)" class="locked">▼</button>
-            <button onclick="map_mode = !map_mode">Map</button>
-            <button onclick="player.world = 'ground'">Ground</button>
-            <button id="spaceButton" onclick="player.world = 'space'">Space</button>
-            <button id="starButton" onclick="player.world = 'star'">Star</button>
+            <button onclick="map_mode = !map_mode">Карта</button>
+            <button onclick="player.world = 'ground'">Земля</button>
+            <button id="spaceButton" onclick="player.world = 'space'">Космос</button>
+            <button id="starButton" onclick="player.world = 'star'">Звезда</button>
         </div>
         <div id="offline_box">
             <div>
-                <h2>Offline Progress!</h2><br>
-                You were gone offline for <b id="offline_time">???</b>!
+                <h2>Офлайн Прогресс!</h2><br>
+                Вы отсуствовали <b id="offline_time">???</b>!
                 <div id="offline_progress">
                     <div id="offline_bar"></div>
                 </div>
-                <span id="offline_ticks">? / ?</span> Ticks<br><br>
-                <button id="offline_skip">Skip Offline Progress</button>
+                <span id="offline_ticks">? / ?</span> Тиков<br><br>
+                <button id="offline_skip">Пропустить</button>
             </div>
         </div>
         <div id="drag_stats">
