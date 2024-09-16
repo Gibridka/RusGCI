@@ -2,15 +2,15 @@ RESET.constellation = {
     unl: ()=>player.planetoid.active&&player.lowGH<=-48,
 
     req: ()=>player.planetoid.level>=300,
-    reqDesc: ()=>`Reach Level 300.`,
+    reqDesc: ()=>`Достигни Уровень 300.`,
 
     resetDesc: `
-    Reset everything the planetary does as well as planets and planetary upgrades.<br><br>First Constellation unlocks the building (on top-left of the reset).
+    Сбрасывает все, что и Планетария, но ещё и Планеты и Планетарные улучшения.<br><br>Первое Созвездие открывает строение (оно сверху-слева от сброса).
     `,
-    resetGain: ()=> `Gain <b>3</b> Lines`,
+    resetGain: ()=> `Дает <b>3</b> Линий`,
 
-    title: `Constellation`,
-    resetBtn: `Form a Constellation`,
+    title: `Созвездие`,
+    resetBtn: `Сформировать Созвездие`,
 
     reset(force=false) {
         if (this.req()||force) {
@@ -39,7 +39,7 @@ RESET.constellation = {
 UPGS.constellation = {
     unl: ()=>player.constellation.unl,
 
-    title: "Constellation Upgrades",
+    title: "Улучшения Созвездия",
 
     underDesc: ()=>``,
 
@@ -50,8 +50,8 @@ UPGS.constellation = {
         {
             max: 1000,
 
-            title: "Planetarium Constellation",
-            desc: `Increase planetarium gain by <b class="green">+50%</b> per level.<br>This effect is increased by <b class="green">50%</b> every <b class="yellow">25</b> levels.`,
+            title: "Созвездия Плантариума",
+            desc: `Увеличивает получение Плантариума на <b class="green">+50%</b> per level.<br>Эффект становиться лучше на <b class="green">50%</b> каждые <b class="yellow">25</b> уровней.`,
 
             res: "line",
             icon: ['Curr/Planetoid'],
@@ -68,8 +68,8 @@ UPGS.constellation = {
         },{
             max: 1000,
 
-            title: "XP Constellation",
-            desc: `Increase XP gain compounding by <b class="green">+100%</b> per level.`,
+            title: "Созвездие ОО",
+            desc: `Увеличивает получение ОО на <b class="green">+100%</b> за уровень. Накладывается друг на друга.`,
 
             res: "line",
             icon: ['Icons/XP'],
@@ -86,8 +86,8 @@ UPGS.constellation = {
         },{
             max: 500,
 
-            title: "Line Constellation",
-            desc: `Increase line gain compounding by <b class="green">+25%</b> per level.`,
+            title: "Созвездие Линий",
+            desc: `Увеличивает получение Линий на <b class="green">+25%</b> за уровень. Накладывается друг на друга.`,
 
             res: "line",
             icon: ['Curr/Lines'],
@@ -104,8 +104,8 @@ UPGS.constellation = {
         },{
             max: 1,
 
-            title: "True Grass Cap",
-            desc: `Compaction no longer affects grass cap.`,
+            title: "Истинный Предел Травы",
+            desc: `Сжатие больше не влияет на предел травы.`,
 
             res: "line",
             icon: ['Icons/MoreGrass'],
@@ -115,8 +115,8 @@ UPGS.constellation = {
         },{
             max: 1000,
 
-            title: "Planetarium Arc",
-            desc: `Increase planetarium gain by <b class="green">+50%</b> per level.<br>This effect is increased by <b class="green">50%</b> every <b class="yellow">25</b> levels.`,
+            title: "Арки Планетариума",
+            desc: `Увеличивает получение Плантариума на <b class="green">+50%</b> per level.<br>Эффект становиться лучше на <b class="green">50%</b> каждые <b class="yellow">25</b> уровней.`,
 
             res: "arc",
             icon: ['Curr/Planetoid'],
@@ -133,8 +133,8 @@ UPGS.constellation = {
         },{
             max: 500,
 
-            title: "Arc Constellation",
-            desc: `Increase arc gain compounding by <b class="green">+20%</b> per level.`,
+            title: "Созвездие Арки",
+            desc: `Увеличивает получение Линий на <b class="green">+20%</b> за уровень. Накладывается друг на друга.`,
 
             res: "arc",
             icon: ['Curr/Arcs'],
@@ -151,8 +151,8 @@ UPGS.constellation = {
         },{
             max: 1000,
 
-            title: "XP Arc",
-            desc: `Increase XP gain compounding by <b class="green">+100%</b> per level.`,
+            title: "ОО Арка",
+            desc: `Увеличивает получение ОО на <b class="green">+100%</b> за уровень. Накладывается друг на друга.`,
 
             res: "arc",
             icon: ['Icons/XP'],
@@ -170,8 +170,8 @@ UPGS.constellation = {
             unl: ()=>hasSolarUpgrade(2,5),
             max: 100,
 
-            title: "Final Prism Upgrade",
-            desc: `Increase Final Prism's tier.`,
+            title: "Улучшение Высшей Призмы",
+            desc: `Увеличивает Тир Высшей Призмы.`,
 
             res: "line",
             icon: ['Icons/PrismUpgrade',"Icons/StarSpeed"],
@@ -209,103 +209,103 @@ function getConstellationSave() {
 
 const CS_PREFIX = [
     null,
-    ['Basic ',``],
-    ['Advanced ',`brightness(0) saturate(100%) invert(96%) sepia(65%) saturate(1066%) hue-rotate(51deg) brightness(101%) contrast(102%)`], // #70FF75
-    ['Powerful ',`brightness(0) saturate(100%) invert(89%) sepia(12%) saturate(1523%) hue-rotate(143deg) brightness(99%) contrast(104%)`], // #87F9FF
-    ['Mega ',`brightness(0) saturate(100%) invert(74%) sepia(96%) saturate(3602%) hue-rotate(207deg) brightness(100%) contrast(108%)`], // #9692FF
-    ['Giga ',`brightness(0) saturate(100%) invert(55%) sepia(27%) saturate(1077%) hue-rotate(233deg) brightness(100%) contrast(105%)`], // #D278FF
-    ['Tera ',`brightness(0) saturate(100%) invert(61%) sepia(86%) saturate(685%) hue-rotate(286deg) brightness(103%) contrast(101%)`], // #FF7BD1
-    ['Peta ',`brightness(0) saturate(100%) invert(76%) sepia(83%) saturate(3397%) hue-rotate(312deg) brightness(99%) contrast(125%)`], // #FF7373
-    ['Exa ',`brightness(0) saturate(100%) invert(79%) sepia(41%) saturate(762%) hue-rotate(321deg) brightness(104%) contrast(101%)`], // #FFB972
-    ['Zetta ',`brightness(0) saturate(100%) invert(90%) sepia(23%) saturate(963%) hue-rotate(355deg) brightness(106%) contrast(101%)`], // #FFF66B
-    ['Yotta ',`brightness(0) saturate(100%) invert(76%) sepia(0%) saturate(1060%) hue-rotate(201deg) brightness(90%) contrast(82%)`], // #A7A7A7
-    ['Ronna ',`brightness(0) saturate(100%) invert(13%) sepia(94%) saturate(5713%) hue-rotate(358deg) brightness(95%) contrast(114%)`], // #FF0000
-    ['Quetta ',`brightness(0) saturate(100%) invert(75%) sepia(38%) saturate(6450%) hue-rotate(359deg) brightness(100%) contrast(107%)`], // #FF9500
+    ['Базовый ',``],
+    ['Продвинутый ',`brightness(0) saturate(100%) invert(96%) sepia(65%) saturate(1066%) hue-rotate(51deg) brightness(101%) contrast(102%)`], // #70FF75
+    ['Мощный ',`brightness(0) saturate(100%) invert(89%) sepia(12%) saturate(1523%) hue-rotate(143deg) brightness(99%) contrast(104%)`], // #87F9FF
+    ['Мега ',`brightness(0) saturate(100%) invert(74%) sepia(96%) saturate(3602%) hue-rotate(207deg) brightness(100%) contrast(108%)`], // #9692FF
+    ['Гига ',`brightness(0) saturate(100%) invert(55%) sepia(27%) saturate(1077%) hue-rotate(233deg) brightness(100%) contrast(105%)`], // #D278FF
+    ['Тера ',`brightness(0) saturate(100%) invert(61%) sepia(86%) saturate(685%) hue-rotate(286deg) brightness(103%) contrast(101%)`], // #FF7BD1
+    ['Пета ',`brightness(0) saturate(100%) invert(76%) sepia(83%) saturate(3397%) hue-rotate(312deg) brightness(99%) contrast(125%)`], // #FF7373
+    ['Экза ',`brightness(0) saturate(100%) invert(79%) sepia(41%) saturate(762%) hue-rotate(321deg) brightness(104%) contrast(101%)`], // #FFB972
+    ['Зетта ',`brightness(0) saturate(100%) invert(90%) sepia(23%) saturate(963%) hue-rotate(355deg) brightness(106%) contrast(101%)`], // #FFF66B
+    ['Йотта ',`brightness(0) saturate(100%) invert(76%) sepia(0%) saturate(1060%) hue-rotate(201deg) brightness(90%) contrast(82%)`], // #A7A7A7
+    ['Ронна ',`brightness(0) saturate(100%) invert(13%) sepia(94%) saturate(5713%) hue-rotate(358deg) brightness(95%) contrast(114%)`], // #FF0000
+    ['Юретта ',`brightness(0) saturate(100%) invert(75%) sepia(38%) saturate(6450%) hue-rotate(359deg) brightness(100%) contrast(107%)`], // #FF9500
 ]
 
 function getCSTierMult(t) { return 1+Math.max(t-8,0)**1.5/10 }
 
 const CS_BUILDINGS = [
     {
-        title: 'Generator',
+        title: 'Генератор',
         img: 'Icons/ConstellationGenerator',
         imgTier: 'Icons/ConstGenerator2',
         max: 24,
 
-        desc: x => `Passively generate <b class='green'>${format(x,0)}</b> Lines.`,
+        desc: x => `Пассивно генерирует <b class='green'>${format(x,0)}</b> Линий.`,
 
         cost: x => Decimal.pow(100,x**1.2*getCSTierMult(x)).round(),
         insta: x => Decimal.pow(9,x).round(),
         eff: x => Decimal.pow(10,x).mul(cs_effect.boostPow).round(),
     },{
-        title: 'Stabilizer',
+        title: 'Стабилизатор',
         img: 'Icons/ConstCooler',
         imgTier: 'Icons/ConstCooler2',
         max: 24,
 
-        desc: x => `Reduce the instability of adjacent constellations by <b class='green'>${format(x,0)}</b>.`,
+        desc: x => `Стабилизация соседних созвездий на <b class='green'>${format(x,0)}</b>.`,
 
         cost: x => Decimal.pow(100,x**1.15*getCSTierMult(x)).mul(50).round(),
         eff: x => Decimal.pow(4,x).mul(5).mul(tmp.coolerPow).round(),
     },{
-        title: 'Reinforcement',
+        title: 'Укрепление',
         img: 'Icons/ConstellationSquare',
         imgTier: 'Icons/ConstSquare2',
         max: 24,
 
-        desc: x => `Increase the instability limit by <b class='green'>${format(x,0)}</b>.`,
+        desc: x => `Увеличивает предел нестабильности на <b class='green'>${format(x,0)}</b>.`,
 
         cost: x => Decimal.pow(100,x**1.15*getCSTierMult(x)).mul(250).round(),
         eff: x => Decimal.pow(4,x).mul(10).mul(tmp.squarePow).mul(cs_effect.reinPow).round(),
     },{
-        title: 'Ring',
+        title: 'Кольцо',
         img: 'Icons/ConstRings',
         imgTier: 'Icons/ConstRing2',
         max: 24,
 
-        desc: x => `Increase rings gain by <b class='green'>${formatMult(x.add(1))}</b>.`,
+        desc: x => `Увеличивает получение колец на <b class='green'>${formatMult(x.add(1))}</b>.`,
 
         cost: x => Decimal.pow(100,x**1.2*getCSTierMult(x)).mul(1e5).round(),
         insta: x => Decimal.pow(6,x).mul(1e2).round(),
         eff: x => Decimal.pow(1.5,x).mul(.5).mul(cs_effect.boostPow),
     },{
-        title: 'Moon',
+        title: 'Луна',
         img: 'Icons/ConstMoon',
         imgTier: 'Icons/ConstMoon2',
         max: 24,
 
-        desc: x => `Increase lunar powers gain by <b class='green'>${formatMult(x.add(1))}</b>.`,
+        desc: x => `Увеличивает получение лунной энергии на <b class='green'>${formatMult(x.add(1))}</b>.`,
 
         cost: x => Decimal.pow(100,x**1.2*getCSTierMult(x)).mul(5e5).round(),
         insta: x => Decimal.pow(6,x).mul(5e2).round(),
         eff: x => Decimal.pow(1.5,x).mul(.5).mul(cs_effect.boostPow),
     },{
-        title: 'Amplifier',
+        title: 'Усилитель',
         img: 'Icons/ConstArrow',
         imgTier: 'Icons/ConstArrow2',
         max: 24,
 
-        desc: x => `Boost the power of adjacent constellations and their instability by <b class='green'>${formatMult(x)}</b>.`,
+        desc: x => `Усиливает силу (и нестабильность) соседних созвездий на <b class='green'>${formatMult(x)}</b>.`,
 
         cost: x => Decimal.pow(1000,x*getCSTierMult(x)).mul(1e6).round(),
         eff: x => Decimal.pow(1.25,x).mul(1.25),
     },{
-        title: 'Bolt',
+        title: 'Молния',
         img: 'Icons/ConstCharge',
         imgTier: 'Icons/ConstCharge2',
         max: 24,
 
-        desc: x => `Boost dark charge rate by <b class='green'>${formatMult(x.add(1))}</b>.`,
+        desc: x => `Ускоряет генерацию темного заряда на <b class='green'>${formatMult(x.add(1))}</b>.`,
 
         cost: x => Decimal.pow(1000,x*getCSTierMult(x)).mul(1e13).round(),
         insta: x => Decimal.pow(7.5,x).mul(1.5e3).round(),
         eff: x => Decimal.pow(1.5,x).mul(.25).mul(cs_effect.boostPow),
     },{
-        title: 'Arc',
+        title: 'Арк',
         img: 'Icons/ConstArc',
         max: 12,
 
-        desc: x => `Passively generate <b class='green'>${format(x,0)}</b> Arcs, if must be placed adjacent to 2+ Moons with tier of 4+. Higher moon tier means higher generation!`,
+        desc: x => `Пассивно генерирует <b class='green'>${format(x,0)}</b> Арки, если среди соседних созвездий есть 2+ Луны с Тиром 4+. Чем больше тир Луны, тем лучше генерация!`,
 
         cost: x => Decimal.pow(1000,x*getCSTierMult(x)).mul(1e16).round(),
         insta: x => Decimal.pow(9,x).mul(1e5).round(),
@@ -313,22 +313,22 @@ const CS_BUILDINGS = [
     },{
         type: 1,
 
-        title: 'Stellarium',
+        title: 'Звездириум',
         img: 'Icons/ConstStar',
         max: 12,
 
-        desc: x => `Increase Stellaris limit by <b class='green'>${format(x,0)}</b>.`,
+        desc: x => `Увеличивает предел Звездирума на <b class='green'>${format(x,0)}</b>.`,
 
         cost: x => Decimal.pow(100,x*getCSTierMult(x)).mul(100).round(),
         eff: x => 3*x+3,
     },{
         type: 1,
 
-        title: 'Diminisher',
+        title: 'Глушитель',
         img: 'Icons/ConstReducer',
         max: 12,
 
-        desc: x => `Divide the instability generation of adjacent constellations by <b class='green'>${format(x,0)}</b>.`,
+        desc: x => `Делит генерацию нестабильности соседних созвездий на <b class='green'>${format(x,0)}</b>.`,
 
         cost: x => Decimal.pow(100,x*getCSTierMult(x)).mul(500).round(),
         insta: x => E(2*x+2),
@@ -336,11 +336,11 @@ const CS_BUILDINGS = [
     },{
         type: 1,
 
-        title: 'Bulwark',
+        title: 'Бастион',
         img: 'Icons/ConstWall',
         max: 12,
 
-        desc: x => `Additively boost the power of reinforcements by <b class='green'>+${format(x.mul(100))}%</b>.`,
+        desc: x => `Добавляет усиление к силе укреплениям равному <b class='green'>+${format(x.mul(100))}%</b>.`,
 
         cost: x => Decimal.pow(100,x*getCSTierMult(x)).mul(1e3).round(),
         insta: x => E(x+1),
@@ -348,11 +348,11 @@ const CS_BUILDINGS = [
     },{
         type: 1,
 
-        title: 'Magnifier',
+        title: 'Приближатель',
         img: 'Icons/ConstCircle',
         max: 12,
 
-        desc: x => `Boost the power of Generators, Moons, Rings and Bolts by <b class='green'>+${format(x.mul(100))}%</b>.`,
+        desc: x => `Усиливает силу Генераторов, Лун, Колец и Молний на <b class='green'>+${format(x.mul(100))}%</b>.`,
 
         cost: x => Decimal.pow(100,x*getCSTierMult(x)).mul(1e3).round(),
         insta: x => E(x+1),
@@ -360,24 +360,24 @@ const CS_BUILDINGS = [
     },{
         type: 1,
 
-        title: 'Echo',
+        title: 'Эхо',
         img: 'Icons/ConstEcho',
         max: 12,
 
-        desc: x => `Increase the power of the constellation to the left tile by <b class='green'>${formatMult(x)}</b>. It's not affected by Echo.`,
+        desc: x => `Усиливает левое от него созвездие на <b class='green'>${formatMult(x)}</b>. Эхо не может влиять на другое Эхо.`,
 
         cost: x => Decimal.pow(1e3,x*getCSTierMult(x)).mul(1e5).round(),
         insta: x => E(x*3+3),
         eff: x => E(1.5**x+1),
     },{
-        title: 'Prism',
+        title: 'Призма',
         img: 'Icons/ConstPrism',
         imgTier: 'Icons/ConstPrism2',
         max: 24,
 
         desc: x => `
-        Generate <b class='green'>${format(x.line,0)}</b> Lines & <b class='green'>${format(x.arc,0)}</b> Arcs.<br>
-        Increase rings & lunar powers gain, dark charge rate by <b class='green'>${formatMult(x.rmb.add(1))}</b>.
+        Генерирует <b class='green'>${format(x.line,0)}</b> Линий и <b class='green'>${format(x.arc,0)}</b> Арков.<br>
+        Также увеличивает кольца, лунные силы и темную зарядка на <b class='green'>${formatMult(x.rmb.add(1))}</b>.
         `,
 
         cost: x => Decimal.pow(100,x**1.25*getCSTierMult(x)).mul(1e4).round(),
@@ -394,14 +394,14 @@ const CS_BUILDINGS = [
             return e
         },
     },{
-        title: 'Final Prism',
+        title: 'Высшая Призма',
         img: 'Icons/ConstPrism3',
         max: 1,
         cap: 1,
 
         desc: x => `
-        Generate <b class='green'>${format(x.line,0)}</b> Lines & <b class='green'>${format(x.arc,0)}</b> Arcs.<br>
-        Increase rings & lunar powers gain, dark charge rate by <b class='green'>${formatMult(x.rmb.add(1))}</b>.
+        Генерирует <b class='green'>${format(x.line,0)}</b> Линий и <b class='green'>${format(x.arc,0)}</b> Арков.<br>
+        Также увеличивает кольца, лунные силы и темную зарядка на <b class='green'>${formatMult(x.rmb.add(1))}</b>.
         `,
 
         cost: x => E(1),
@@ -416,42 +416,42 @@ const CS_BUILDINGS = [
             return e
         },
     },{
-        title: 'Grid',
+        title: 'Сеть',
         img: 'Icons/GridConstellation',
         max: 12,
         cap: 1,
 
-        desc: x => `Boost the power of Final Prism by <b class='green'>${formatPow(x.add(1))}</b>.`+(hasSolarUpgrade(2,15)?'':` The effect after boost caps at <b class='red'>3</b>.`),
+        desc: x => `Усиливает силы Высшей Призмы на <b class='green'>${formatPow(x.add(1))}</b>.`+(hasSolarUpgrade(2,15)?'':` Предел эффекта после усиления находиться в <b class='red'>3</b>.`),
 
         cost: x => Decimal.pow(1e25,x**1.25*(Math.max(x-3,0)**2/10+1)).mul(1e150).round(),
         eff: x => E(x/10+.1).add(1).softcap(1.4,1/3,0).sub(1),
     },{
-        title: 'Ray',
+        title: 'Луч',
         img: 'Icons/RayConstellation',
         max: 12,
         get cap() { return 5 + solarUpgEffect(6,3,0) },
 
-        desc: x => `Increase Solar Ray gain by <b class='green'>+${format(x.mul(100))}%</b>.`,
+        desc: x => `Увеличивает количество Солнечных Лучей на <b class='green'>+${format(x.mul(100))}%</b>.`,
 
         cost: x => Decimal.pow(1e25,x**1.25*(Math.max(x-3,0)**2/10+1)).mul(1e150).round(),
         eff: x => Decimal.pow(2,x).mul(.1).mul(cs_effect.starPow),
     },{
-        title: 'Star',
+        title: 'Звезда',
         img: 'Icons/StarConstellation',
         max: 12,
         cap: 5,
 
-        desc: x => `Increase the power of all Persistent constellations on the grid by <b class='green'>+${format(x.mul(100))}%</b>.`,
+        desc: x => `Усиливает силу Пермаментных созвездий на площадке на <b class='green'>+${format(x.mul(100))}%</b>.`,
 
         cost: x => Decimal.pow(1e25,x**1.25*(Math.max(x-3,0)**2/10+1)).mul(1e150).round(),
         eff: x => Decimal.mul(x/20+.05,tmp.constStarStrong?3:1),
     },{
-        title: 'Improver',
+        title: 'Улучшатель',
         img: 'Icons/ImproverConstellation',
         max: 12,
         get cap() { return 3 + solarUpgEffect(6,4,0) },
 
-        desc: x => `Increase the power of adjacent Persistent constellations by <b class='green'>+${format(x.mul(100))}%</b>.`,
+        desc: x => `Усиливает соседние Пермаментных созвездий на <b class='green'>+${format(x.mul(100))}%</b>.`,
 
         cost: x => Decimal.pow(1e25,x**1.25*(Math.max(x-3,0)**2/10+1)).mul(1e150).round(),
         eff: x => E(x/10+.1),
@@ -889,15 +889,15 @@ el.update.constellation = function () {
     
                     let h = (i==14?cs.title:`${prefix[0]+cs.title} ${cs_tier > 12 ? "MK2" : ""} [T${cs_tier}]`)+`<span style='font-size: 14px'>`
 
-                    if (i > 13) h += '<br><b class="yellow">Persistent</b>'
+                    if (i > 13) h += '<br><b class="yellow">Пермаментное</b>'
 
-                    if (cap) h += `<br>Placed ${cs_amount[i]} / ${cap}`
+                    if (cap) h += `<br>Поставлено: ${cs_amount[i]} / ${cap}`
     
                     h += '<br>' + cs.desc(cs.eff(cs_tier-1))
     
-                    if (cs.insta) h += cs_type == 1 ? '<br>Uses up <b class="magenta">'+format(cs.insta(cs_tier-1),0)+' Stellaris</b>' : '<br>Increase the instability by <b class="red">'+format(cs.insta(cs_tier-1),0)+'</b>'
+                    if (cs.insta) h += cs_type == 1 ? '<br>Использует <b class="magenta">'+format(cs.insta(cs_tier-1),0)+' Звездирума</b>' : '<br>Увеличивает нестабильность на <b class="red">'+format(cs.insta(cs_tier-1),0)+'</b>'
                     
-                    let cost = cs.cost(cs_tier-1), c = `<br> Cost: ${cost.format(0)}` + [' Lines',' Arcs'][cs.type||0]
+                    let cost = cs.cost(cs_tier-1), c = `<br> Стоит: ${cost.format(0)}` + [' Линий',' Арков'][cs.type||0]
                     if (res[cs.type||0].lt(cost)) c = '<span class="red">'+c+'</span>'
                     h += c
     
@@ -911,55 +911,55 @@ el.update.constellation = function () {
         } else if (cs_tab == 1) {
             let h = ''
     
-            if (cs_effect.line.gt(0)) h += `+${cs_effect.line.format(0)}/s to Lines gain.<br>`
-            if (cs_effect.arc.gt(0)) h += `+${cs_effect.arc.format(0)}/s to Arcs gain.<br>`
-            if (cs_effect.ring.gt(1)) h += `${formatMult(cs_effect.ring)} to Rings gain.<br>`
-            if (cs_effect.moon.gt(1)) h += `${formatMult(cs_effect.moon)} to Lunar Powers gain.<br>`
-            if (cs_effect.bolt.gt(1)) h += `${formatMult(cs_effect.bolt)} to Dark Charge rate.<br>`
-            if (cs_effect.ray.gt(1)) h += `${formatMult(cs_effect.ray)} to Solar Rays gain.<br>`
+            if (cs_effect.line.gt(0)) h += `+${cs_effect.line.format(0)}/сек Линий.<br>`
+            if (cs_effect.arc.gt(0)) h += `+${cs_effect.arc.format(0)}/сек Арков.<br>`
+            if (cs_effect.ring.gt(1)) h += `${formatMult(cs_effect.ring)} к получению Колец.<br>`
+            if (cs_effect.moon.gt(1)) h += `${formatMult(cs_effect.moon)} к получению Лунной силы.<br>`
+            if (cs_effect.bolt.gt(1)) h += `${formatMult(cs_effect.bolt)} к получению Темного Заряда.<br>`
+            if (cs_effect.ray.gt(1)) h += `${formatMult(cs_effect.ray)} к получению Солнечных Лучей.<br>`
     
             tmp.el.cs_effects.setHTML(h)
         } else if (cs_tab == 2) {
             for (let i = 0; i < MAX_PRESETS; i++) {
                 let p = player.constellation.presets[i], c = ''
     
-                if (p.cost[0].gt(0)) c += p.cost[0].format(0) + ' Lines'
-                if (p.cost[1].gt(0)) c += (c ? ', ' : '') + p.cost[1].format(0) + ' Arcs'
+                if (p.cost[0].gt(0)) c += p.cost[0].format(0) + ' Линий'
+                if (p.cost[1].gt(0)) c += (c ? ', ' : '') + p.cost[1].format(0) + ' Арков'
     
                 tmp.el['cs_preset_cost'+i].setHTML(c||'???')
     
-                tmp.el['cs_preset_boost'+i].setHTML(p.boosts?'Boosts: '+p.boosts:'No Boosts')
+                tmp.el['cs_preset_boost'+i].setHTML(p.boosts?'Boosts: '+p.boosts:'Без бустов')
             }
         } else if (cs_tab == 3) {
-            let h = `You have ${player.darkCharge.format(0)} <span class='smallAmt'>${player.darkCharge.formatGain(tmp.darkChargeRate)}</span> Dark Charge.`
+            let h = `У тебя есть ${player.darkCharge.format(0)} <span class='smallAmt'>${player.darkCharge.formatGain(tmp.darkChargeRate)}</span> Темного Заряда.`
     
             let effs = tmp.darkChargeEffs
     
-            if (effs.charge.gt(1)) h += `<br><b class='green'>${formatMult(effs.charge)}</b> to Charge Rate.`
-            if (effs.cosmic.gt(1)) h += `<br><b class='green'>${formatMult(effs.cosmic)}</b> to Cosmic Gain.`
-            if (effs.sp.gt(1)) h += `<br><b class='green'>^${format(effs.sp,4)}</b> to SP Gain.`+effs.sp.softcapHTML(1.2)
-            if (effs.lunar.gt(1)) h += `<br><b class='green'>${formatMult(effs.lunar)}</b> to Lunar Powers Gain.`+effs.lunar.softcapHTML(1e3)
-            if (effs.line.gt(1)) h += `<br><b class='green'>${formatMult(effs.line)}</b> to Lines Gain.`+effs.line.softcapHTML(1e3)
+            if (effs.charge.gt(1)) h += `<br><b class='green'>${formatMult(effs.charge)}</b> к Зарядке.`
+            if (effs.cosmic.gt(1)) h += `<br><b class='green'>${formatMult(effs.cosmic)}</b> к получению Космо.`
+            if (effs.sp.gt(1)) h += `<br><b class='green'>^${format(effs.sp,4)}</b> к получению СО.`+effs.sp.softcapHTML(1.2)
+            if (effs.lunar.gt(1)) h += `<br><b class='green'>${formatMult(effs.lunar)}</b> к получению Лунных Сил.`+effs.lunar.softcapHTML(1e3)
+            if (effs.line.gt(1)) h += `<br><b class='green'>${formatMult(effs.line)}</b> к получению Линий.`+effs.line.softcapHTML(1e3)
     
             tmp.el.cs_dark.setHTML(h)
         }
     
         let h = ''
-        if (cs_selected) h = getConstellationImage(cs_selected) + ' Selected!'
+        if (cs_selected) h = getConstellationImage(cs_selected) + ' Выбрано!'
         tmp.el.constellation_select.setHTML(h)
     
-        h = 'Instability: '+cs_insta.total.format(1)+' / '+cs_insta.max.format(1)
+        h = 'Нестабильность: '+cs_insta.total.format(1)+' / '+cs_insta.max.format(1)
         if (player.constellation.arcUnl) h += '<br>Stellaris: '+cs_stellar.total.format(0)+' / '+cs_stellar.max.format(0)
     
-        if (cs_insta.total.gt(cs_insta.max) || cs_stellar.total.gt(cs_stellar.max)) h = '<b class="red">'+h+'<br>Effects no longer work!</b>'
+        if (cs_insta.total.gt(cs_insta.max) || cs_stellar.total.gt(cs_stellar.max)) h = '<b class="red">'+h+'<br>Эффекты не работают!</b>'
         tmp.el.constellation_stab.setHTML(h)
     
-        h = player.constellation.line.format(0) + ' Lines' + (tmp.lineGain.gt(0) ? ' <span class="smallAmt">'+player.constellation.line.formatGain(tmp.lineGain)+'</span>' : '')
-        if (player.constellation.arcUnl) h += '<br>' + player.constellation.arc.format(0) + ' Arcs' + (tmp.arcGain.gt(0) ? ' <span class="smallAmt">'+player.constellation.arc.formatGain(tmp.arcGain)+'</span>' : '')
+        h = player.constellation.line.format(0) + ' Линий' + (tmp.lineGain.gt(0) ? ' <span class="smallAmt">'+player.constellation.line.formatGain(tmp.lineGain)+'</span>' : '')
+        if (player.constellation.arcUnl) h += '<br>' + player.constellation.arc.format(0) + ' Арков' + (tmp.arcGain.gt(0) ? ' <span class="smallAmt">'+player.constellation.arc.formatGain(tmp.arcGain)+'</span>' : '')
     
         tmp.el.constellation_amt.setHTML(h)
     
-        tmp.el.cs_sell.setTxt('Delete Mode: '+(cs_sellMode ? "ON" : "OFF"))
+        tmp.el.cs_sell.setTxt('Режим Удаления: '+(cs_sellMode ? "ВКЛ" : "ВЫКЛ"))
     }
 }
 
@@ -989,13 +989,13 @@ function checkConstellationCosts() {
 }
 
 const PRES_BOOSTS = {
-    0: 'Lines',
-    3: 'Rings',
-    4: 'Lunar Powers',
-    6: 'Dark Charge',
-    7: 'Arcs',
-    13: 'Prism',
-    14: 'Prism',
+    0: 'Линии',
+    3: 'Кольца',
+    4: 'Лунные Силы',
+    6: 'Темный Заряд',
+    7: 'Арки',
+    13: 'Призма',
+    14: 'Призма',
 }
 
 function savePreset(i) {
@@ -1094,10 +1094,10 @@ el.setup.constellation = function () {
     for (let i = 0; i < MAX_PRESETS; i++) {
         h += `
         <div class='cs-preset'>
-            <h3>Preset ${i+1}</h3><br>
-            Cost: <span id='cs_preset_cost${i}'>???</span><br>
-            <span id='cs_preset_boost${i}'>No Boosts</span><br>
-            <button onclick='savePreset(${i})'>Save</button><button onclick='loadPreset(${i})'>Load</button>
+            <h3>Заготовка ${i+1}</h3><br>
+            Стоит: <span id='cs_preset_cost${i}'>???</span><br>
+            <span id='cs_preset_boost${i}'>Без бустов</span><br>
+            <button onclick='savePreset(${i})'>Сохранить</button><button onclick='loadPreset(${i})'>Загрузить</button>
         </div>
         `
     }
