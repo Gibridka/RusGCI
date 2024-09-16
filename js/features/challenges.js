@@ -5,14 +5,14 @@ const CHALS = [
         max: 20,
         id: 'pp',
 
-        title: `Less Level`,
-        desc: `The Level requirement is expensive.`,
-        reward: `XP gain is increased by <b class="green">100%</b> every completions.`,
+        title: `Меньше уровней`,
+        desc: `Требования к уровню повышены.`,
+        reward: `Получение ОО увеличено на <b class="green">100%</b> за каждое выполнение.`,
 
         goal: i=>30+10*i,
         bulk: i=>Math.floor((i-30)/10+1),
 
-        goalDesc: x=>"Level "+format(x,0),
+        goalDesc: x=>"Уровень "+format(x,0),
         goalAmt: ()=>player.level.toNumber(),
 
         eff: i=>Decimal.pow(2,i),
@@ -23,14 +23,14 @@ const CHALS = [
         max: 20,
         id: 'pp',
 
-        title: `Grassless`,
-        desc: `You cannot buy any grass upgrades.`,
-        reward: `Grass gain is increased by <b class="green">100%</b> every completions.`,
+        title: `Безтравный`,
+        desc: `Травные улучшения нельзя покупать.`,
+        reward: `Получение Травы увеличено на <b class="green">100%</b> за каждое выполнение.`,
 
         goal: i=>100+10*i,
         bulk: i=>Math.floor((i-100)/10+1),
 
-        goalDesc: x=>"Level "+format(x,0),
+        goalDesc: x=>"Уровень "+format(x,0),
         goalAmt: ()=>player.level.toNumber(),
 
         eff: i=>Decimal.pow(2,i),
@@ -41,14 +41,14 @@ const CHALS = [
         max: 20,
         id: 'crystal',
 
-        title: `No Tiers`,
-        desc: `You cannot tier up.`,
-        reward: `TP gain is increased by <b class="green">100%</b> every completions.`,
+        title: `Без Тиров`,
+        desc: `Ты не можешь получать тиры.`,
+        reward: `Получение ОТ увеличено на <b class="green">100%</b> за каждое выполнение.`,
 
         goal: i=>100+10*i,
         bulk: i=>Math.floor((i-100)/10+1),
 
-        goalDesc: x=>"Level "+format(x,0),
+        goalDesc: x=>"Уровень "+format(x,0),
         goalAmt: ()=>player.level.toNumber(),
 
         eff: i=>Decimal.pow(2,i),
@@ -59,14 +59,14 @@ const CHALS = [
         max: 10,
         id: 'crystal',
 
-        title: `Reduced Resources`,
-        desc: `^0.5 to Grass, XP & PP gain.`,
-        reward: `Grass multiplier's exponent is increased by <b class="green">+2%</b> per completion.`,
+        title: `Уменьшение ресурсов`,
+        desc: `Квадратный корень (^0.5) к получению Травы, ОО и ОП.`,
+        reward: `Экспонента для множителя Травы увеличен на <b class="green">+2%</b> за каждое выполнение.`,
 
         goal: i=>50+20*i,
         bulk: i=>Math.floor((i-50)/20+1),
 
-        goalDesc: x=>"Level "+format(x,0),
+        goalDesc: x=>"Уровень "+format(x,0),
         goalAmt: ()=>player.level.toNumber(),
 
         eff: i=>i/50+1,
@@ -77,14 +77,14 @@ const CHALS = [
         max: 10,
         id: 'crystal',
 
-        title: `Prestigeless`,
-        desc: `You cannot buy any Prestige Upgrades.`,
-        reward: `PP gain is increased by <b class="green">100%</b> every completions.`,
+        title: `Безпрестижный`,
+        desc: `Престижные улучшения нельзя покупать.`,
+        reward: `Получение ОП увеличено на <b class="green">100%</b> за каждое выполнение.`,
 
         goal: i=>7+i,
         bulk: i=>i-6,
 
-        goalDesc: x=>"Tier "+format(x,0),
+        goalDesc: x=>"Тир "+format(x,0),
         goalAmt: ()=>player.tier.toNumber(),
 
         eff: i=>Decimal.pow(2,i),
@@ -95,14 +95,14 @@ const CHALS = [
         max: 10,
         id: 'steel',
 
-        title: `Reduced Resources II`,
-        desc: `^0.5 to Grass, XP, TP, PP & Crystal gain.`,
-        reward: `Steel gain is increased by <b class="green">50%</b> every completions.`,
+        title: `Уменьшение ресурсов II`,
+        desc: `Квадратный корень (^0.5) к получению травы, ОО, ОП, ОТ и кристаллов.`,
+        reward: `Получение Стали увеличено на <b class="green">50%</b> за каждое выполнение.`,
 
         goal: i=>100+i*20,
         bulk: i=>Math.floor((i-100)/20+1),
 
-        goalDesc: x=>"Level "+format(x,0),
+        goalDesc: x=>"Уровень "+format(x,0),
         goalAmt: ()=>player.level.toNumber(),
 
         eff: i=>Decimal.pow(1.5,i),
@@ -113,14 +113,14 @@ const CHALS = [
         max: 10,
         id: 'steel',
 
-        title: `Crystalless`,
-        desc: `You cannot buy any Crystal Upgrades.`,
-        reward: `Crystal gain is increased by <b class="green">100%</b> every completions.`,
+        title: `Без кристаллов`,
+        desc: `Кристальные улучшения нельзя купить.`,
+        reward: `Получение Кристаллов увеличено на <b class="green">100%</b> за каждое выполнение.,
 
         goal: i=>20+i,
         bulk: i=>i-19,
 
-        goalDesc: x=>"Tier "+format(x,0),
+        goalDesc: x=>"Тир "+format(x,0),
         goalAmt: ()=>player.tier.toNumber(),
 
         eff: i=>Decimal.pow(2,i),
@@ -131,14 +131,14 @@ const CHALS = [
         max: 10,
         id: 'steel',
 
-        title: `Challengerism`,
-        desc: `You are trapped in Prestige & Crystal Challenges (except Reduced Resources).`,
-        reward: `Charge rate is increased by <b class="green">10x</b> every completions.`,
+        title: `Вызовлизм`,
+        desc: `Ты застрял во Вызовах Престижа и Кристаллов, кроме Уменьшение Ресурсов.`,
+        reward: `Зарядка происходит в <b class="green">10x</b> быстрее за каждое выполнение.`,
 
         goal: i=>40+i*10,
         bulk: i=>Math.floor((i-40)/10+1),
 
-        goalDesc: x=>"Level "+format(x,0),
+        goalDesc: x=>"Уровень "+format(x,0),
         goalAmt: ()=>player.level.toNumber(),
 
         eff: i=>Decimal.pow(10,i),
@@ -196,12 +196,12 @@ el.setup.chal = ()=>{
             <h3>${c.title}</h3><br>
             <b class="yellow" id="chal_comp_${i}">0 / 0</b><br><br>
             ${c.desc}<br>
-            Reward: ${c.reward}<br>
-            Effect: <b class="cyan" id="chal_eff_${i}">???</b>
+            Награда: ${c.reward}<br>
+            Эффект: <b class="cyan" id="chal_eff_${i}">???</b>
 
             <div style="position:absolute; bottom:7px; width:100%;">
-                Status: <b class="red" id="chal_pro_${i}">Inactive</b><br>
-                <b class="red" id="chal_goal_${i}">Goal: ???</b>
+                Статус: <b class="red" id="chal_pro_${i}">Неактивен</b><br>
+                <b class="red" id="chal_goal_${i}">Цель: ???</b>
             </div>
         </div>
         `
@@ -232,7 +232,7 @@ el.update.chal = ()=>{
 
                     tmp.el["chal_comp_"+i].setTxt(format(l,0) + " / " + format(c.max,0))
                     tmp.el["chal_eff_"+i].setHTML(c.effDesc(tmp.chal.eff[i]))
-                    tmp.el["chal_pro_"+i].setTxt(completed ? "Completed" : inChal(i) ? "Progress" : "Inactive")
+                    tmp.el["chal_pro_"+i].setTxt(completed ? "Выполнено" : inChal(i) ? "В процессе" : "Неактивен")
                     tmp.el["chal_pro_"+i].setClasses({[completed ? "green" : inChal(i) ? "yellow" : "red"]: true})
 
                     tmp.el["chal_goal_"+i].setTxt("Goal: "+c.goalDesc(tmp.chal.goal[i]))
