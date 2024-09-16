@@ -232,7 +232,7 @@ el.update.chal = ()=>{
 
                     tmp.el["chal_comp_"+i].setTxt(format(l,0) + " / " + format(c.max,0))
                     tmp.el["chal_eff_"+i].setHTML(c.effDesc(tmp.chal.eff[i]))
-                    tmp.el["chal_pro_"+i].setTxt(completed ? "Выполнено" : inChal(i) ? "В процессе" : "Неактивен")
+                    tmp.el["chal_pro_"+i].setTxt(completed ? "Completed" : inChal(i) ? "Progress" : "Inactive")
                     tmp.el["chal_pro_"+i].setClasses({[completed ? "green" : inChal(i) ? "yellow" : "red"]: true})
 
                     tmp.el["chal_goal_"+i].setTxt("Goal: "+c.goalDesc(tmp.chal.goal[i]))
