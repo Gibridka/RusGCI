@@ -14,7 +14,7 @@ el.setup.reset = ()=>{
                 <div style="position: absolute; bottom: 0; width: 100%;">
                     <div id="reset_gain_${x}"></div>
                     <button id="reset_btn_${x}" onclick="RESET.${x}.reset()">${r.resetBtn}</button>
-                    ${x=='gh'||x=='gs'?`<button id="reset_auto_${x}">Auto: OFF</button>`:""}
+                    ${x=='gh'||x=='gs'?`<button id="reset_auto_${x}">Авто: ВЫКЛ</button>`:""}
                 </div>
             </div>
             <div id="reset_req_div_${x}" class="reset_req ${x}"><div id="reset_req_desc_${x}"></div></div>
@@ -111,18 +111,18 @@ el.update.reset = ()=> {
 
         tmp.el.sunrise_desc.setHTML(
             tmp.solarianUnl
-            ?`Reset eclipse, remnants, remnant upgrades, collecting, and forming for sunstone and update FM.`
-            :`Reset eclipse, remnants, and remnant upgrades for sunstone.`
+            ?`Сброс затмений, остатков и его улучшения, сбор и формирования ради солнцакамня и обновления БМ.`
+            :`Сброс затмений, остатков и его улучшения ради солнцакамня.`
         )
 
         if (RESET.twilight.unl() && RESET.twilight.req()) {
             let b = tmp.twilightBonus
             let h = `
-            Increase your twilight bonus by <b class="magenta">${tmp.twilightBonusIncrease.format(0)}</b> (next at stage ${SOLAR_OBELISK.twilight.nextBonus.format(0)})<br>
-            Twilight Bonuses (${player.sol.twilightBonus.format(0)}):
-            <br><b class="green">${formatMult(b[0],0)}</b>${b[3]?`, <b class="green">${formatPow(b[3])}</b>`:""} Offense
-            <br><b class="green">${formatMult(b[1],0)}</b>${b[4]?`, <b class="green">${formatPow(b[4])}</b>`:""} Souls/Collect/Form/Restore
-            <br><b class="green">${formatMult(b[2],0)}</b> Divine Souls/Fund
+            Увеличивает ваше усиление Суммерков на <b class="magenta">${tmp.twilightBonusIncrease.format(0)}</b> (след. на битве ${SOLAR_OBELISK.twilight.nextBonus.format(0)})<br>
+            Усиления Суммерков - (${player.sol.twilightBonus.format(0)}):
+            <br><b class="green">${formatMult(b[0],0)}</b>${b[3]?`, <b class="green">${formatPow(b[3])}</b>`:""} Защиты
+            <br><b class="green">${formatMult(b[1],0)}</b>${b[4]?`, <b class="green">${formatPow(b[4])}</b>`:""} Душ/Сбор/Формирования/Восстановления
+            <br><b class="green">${formatMult(b[2],0)}</b> Святые Души/Финансирования
             `
 
             tmp.el.twilight_bonus.setHTML(h)
